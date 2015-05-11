@@ -24,7 +24,7 @@ describe("android WholeFoodsMarketApp", function () {
 
     return driver
       .init(desired)
-      .setImplicitWaitTimeout(5000);
+      .setImplicitWaitTimeout(15000);
   });
 
   after(function () {
@@ -41,7 +41,7 @@ describe("android WholeFoodsMarketApp", function () {
     return driver
         .elementById('com.wholefoods.wholefoodsmarket:id/etHomeSearch')
         .sendKeys('coffee')
-        .text().should.become('coffee')
+        .textPresent('coffee');
   });
 
   it('should click on Search Button', function () {
