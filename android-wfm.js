@@ -40,8 +40,8 @@ describe("android WholeFoodsMarketApp", function () {
   it('should enter “Coffee” in the search box', function () {
     return driver
         .elementById('com.wholefoods.wholefoodsmarket:id/etHomeSearch')
-        .sendKeys('coffee')
-        .textPresent('coffee');
+        .sendKeys('Coffee')
+        .textPresent('Coffee');
   });
 
   it('should click on Search Button', function () {
