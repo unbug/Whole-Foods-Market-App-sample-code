@@ -20,7 +20,8 @@ describe("android WholeFoodsMarketApp", function () {
     require("./helpers/logging").configure(driver);
 
     var desired = _.clone(require("./helpers/caps").android22);
-    desired.app = require("./helpers/apps").WholeFoodsMarketApp;
+    desired = _.extend(desired,require("./helpers/apps").WholeFoodsMarketApp);
+
     return driver
       .init(desired)
       .setImplicitWaitTimeout(5000);
