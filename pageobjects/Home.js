@@ -8,4 +8,7 @@ module.exports  = function(driver){
   this.verifySearchValue = function(v){
     return this.searchInput.textPresent(v);
   }
+  this.startSearch = function(){
+    return this.searchButton.click();
+  }
 }

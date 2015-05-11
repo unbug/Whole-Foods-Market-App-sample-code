@@ -47,12 +47,12 @@ describe("android WholeFoodsMarketApp", function () {
 
   it('should click on Search Button', function () {
     var home = pageObjects.getHome(driver);
-    return home.searchButton.click();
+    return home.startSearch();
   });
 
   it('should show the "SEARCH" result', function () {
     var searchResult = pageObjects.getSearchResult(driver);
-    return searchResult.getTitle().should.become('SEARCH')
+    return searchResult.isSearchResultView();
   });
 
 });

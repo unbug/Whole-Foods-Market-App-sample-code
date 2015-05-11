@@ -4,4 +4,7 @@ module.exports = function(driver){
   this.getTitle = function(){
     return this.title.text();
   }
+  this.isSearchResultView = function(){
+    return this.getTitle().should.become('SEARCH');
+  }
 }
