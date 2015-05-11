@@ -3,11 +3,13 @@
 require("./helpers/setup");
 
 var wd = require("wd"),
-    _ = require('underscore'),
-    serverConfigs = require('./helpers/appium-servers'),
-    _p = require('./helpers/promise-utils'),
-    Q = require('q');
+  _ = require('underscore'),
+  serverConfigs = require('./helpers/appium-servers'),
+  _p = require('./helpers/promise-utils'),
+  Q = require('q'),
+  pageObjects = require('./pageobjects/index');
 
+console.dir(pageObjects);
 
 describe("android WholeFoodsMarketApp", function () {
   this.timeout(300000);
@@ -20,7 +22,7 @@ describe("android WholeFoodsMarketApp", function () {
     require("./helpers/logging").configure(driver);
 
     var desired = _.clone(require("./helpers/caps").android22);
-    desired = _.extend(desired,require("./helpers/apps").WholeFoodsMarketApp);
+    desired = _.extend(desired, require("./helpers/apps").WholeFoodsMarketApp);
 
     return driver
       .init(desired)
@@ -38,22 +40,19 @@ describe("android WholeFoodsMarketApp", function () {
   });
 
   it('should enter “Coffee” in the search box', function () {
-    return driver
-        .elementById('com.wholefoods.wholefoodsmarket:id/etHomeSearch')
-        .sendKeys('Coffee')
-        .textPresent('Coffee');
+    var home = pageObjects.getHome(driver);
+    home.setSearchValue('Coffee')
+    return home.verifySearchValue('Coffee');
   });
 
   it('should click on Search Button', function () {
-    return driver
-        .elementById('com.wholefoods.wholefoodsmarket:id/imgSearch')
-        .click()
+    var home = pageObjects.getHome(driver);
+    return home.searchButton.click();
   });
 
   it('should show the "SEARCH" result', function () {
-    return driver
-        .waitForElementById('com.wholefoods.wholefoodsmarket:id/header_title',5000)
-        .text().should.become('SEARCH')
+    var searchResult = pageObjects.getSearchResult(driver);
+    return searchResult.getTitle().should.become('SEARCH')
   });
 
 });
