@@ -9,9 +9,7 @@ var wd = require("wd"),
   Q = require('q'),
   pageObjects = require('./pageobjects/index');
 
-console.dir(pageObjects);
-
-describe("android WholeFoodsMarketApp", function () {
+describe("android Whole Foods Market App", function () {
   this.timeout(300000);
   var driver;
   var allPassed = true;

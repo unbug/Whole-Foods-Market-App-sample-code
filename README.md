@@ -1,5 +1,13 @@
 #Node.js Whole Foods Market App sample code
 
+### to view reports in [reports](https://github.com/unbug/Whole-Foods-Market-App-sample-code/blob/master/reports/)
+
+![Reports.](https://github.com/unbug/Whole-Foods-Market-App-sample-code/blob/master/assets/reports.png)
+
+### to view code coverages in [coverage](https://github.com/unbug/Whole-Foods-Market-App-sample-code/blob/master/coverage/)
+
+![coverage.](https://github.com/unbug/Whole-Foods-Market-App-sample-code/blob/master/assets/coverage.png)
+
 ## prerequisites
 
 Upgrade Mocha to the latest version:

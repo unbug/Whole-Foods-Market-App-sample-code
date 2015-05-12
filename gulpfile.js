@@ -10,11 +10,15 @@ var del = require('del');
 var runSequence = require('run-sequence');
 
 gulp.task('test:android', function(){
-    return gulp.src('android-*.js', {read: false})
-        .pipe($.mocha());
+  return gulp.src('android-*.js', {read: false})
+    .pipe($.spawnMocha({
+      R: 'mochawesome',
+      O: 'reportDir=reports,reportName=index',
+      istanbul: true
+    }))
 });
 
 
 gulp.task('default', function(cb){
-    runSequence('test:android',cb);
+  runSequence('test:android',cb);
 });

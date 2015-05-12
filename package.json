@@ -1,6 +1,6 @@
 {
   "name": "Whole-Foods-Market-App-sample-code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Whole Foods Market App sample",
   "main": "index.js",
   "scripts": {
@@ -15,21 +15,23 @@
     "chai": "^2.2.0",
     "chai-as-promised": "^5.0.0",
     "colors": "^1.0.3",
-    "express": "^4.12.3",
-    "gulp-mocha": "^2.0.1",
-    "q": "^2.0.2",
-    "underscore": "^1.8.3",
-    "wd": "^0.3.11",
     "date-utils": "^1.2.16",
     "del": "^1.1.1",
+    "express": "^4.12.3",
     "gulp": "^3.8.11",
     "gulp-if": "^1.2.5",
     "gulp-load-plugins": "^0.8.1",
     "gulp-replace": "^0.5.3",
     "gulp-sourcemaps": "^1.5.1",
+    "gulp-spawn-mocha": "^2.0.1",
     "gulp-util": "^3.0.4",
+    "mocha": "^2.2.4",
+    "mochawesome": "^1.1.1",
+    "q": "^2.0.2",
     "run-sequence": "^1.0.2",
     "through2": "^0.6.3",
-    "vinyl-source-stream": "^1.1.0"
+    "underscore": "^1.8.3",
+    "vinyl-source-stream": "^1.1.0",
+    "wd": "^0.3.11"
   }
 }
